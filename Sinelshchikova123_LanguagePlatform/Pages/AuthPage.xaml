@@ -1,0 +1,47 @@
+﻿<Page x:Class="Sinelshchikova123_LanguagePlatform.Pages.AuthPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Авторизация">
+    <Grid Background="#F3F4F6">
+        <Border Background="White" CornerRadius="10" Width="400" Height="450" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Border.Effect>
+                <DropShadowEffect Color="Gray" BlurRadius="20" Opacity="0.2" ShadowDepth="5"/>
+            </Border.Effect>
+
+            <Grid Margin="30">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Вход в систему" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+                <Label Content="Логин" Grid.Row="1"/>
+                <TextBox x:Name="TextBoxLogin" Grid.Row="1" Margin="0,25,0,10" ToolTip="Введите логин"/>
+
+                <Label Content="Пароль" Grid.Row="2"/>
+                <PasswordBox x:Name="PasswordBox" Grid.Row="2" Margin="0,25,0,10" ToolTip="Введите пароль" PasswordChanged="PasswordBox_PasswordChanged"/>
+
+                <Grid Grid.Row="3" x:Name="CaptchaGrid" Visibility="Collapsed" Margin="0,10,0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="CaptchaText" IsReadOnly="True" FontSize="20" FontStyle="Italic" FontWeight="Bold" TextAlignment="Center" Background="#E5E7EB" BorderThickness="0" Height="40"/>
+                    <TextBox x:Name="CaptchaInput" Grid.Column="1" ToolTip="Введите символы с картинки" Margin="10,0,0,0" Height="40"/>
+                </Grid>
+
+                <StackPanel Grid.Row="4" Orientation="Vertical" Margin="0,20,0,0">
+                    <Button x:Name="ButtonEnter" Content="Войти" Click="ButtonEnter_OnClick"/>
+                    <Button x:Name="ButtonSubmitCaptcha" Content="Подтвердить капчу" Visibility="Collapsed" Click="ButtonSubmitCaptcha_Click" Background="#10B981"/>
+                    <Button x:Name="ButtonReg" Content="Регистрация" Click="ButtonReg_Click" Background="Transparent" Foreground="#4F46E5" BorderThickness="1" BorderBrush="#4F46E5"/>
+                    <Button x:Name="ButtonChangePassword" Content="Забыли пароль?" Click="ButtonChangePassword_Click" Background="Transparent" Foreground="Gray" FontWeight="Normal"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

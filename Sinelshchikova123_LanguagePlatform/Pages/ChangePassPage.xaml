@@ -1,0 +1,36 @@
+﻿<Page x:Class="Sinelshchikova123_LanguagePlatform.Pages.ChangePassPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Background="#F3F4F6">
+        <Border Background="White" CornerRadius="10" Width="400" Height="400" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid Margin="30">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Смена пароля" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+                <Label Content="Логин" Grid.Row="1"/>
+                <TextBox x:Name="TbLogin" Grid.Row="1" Margin="0,25,0,10"/>
+
+                <Label Content="Текущий пароль" Grid.Row="2"/>
+                <PasswordBox x:Name="CurrentPasswordBox" Grid.Row="2" Margin="0,25,0,10"/>
+
+                <Label Content="Новый пароль" Grid.Row="3"/>
+                <PasswordBox x:Name="NewPasswordBox" Grid.Row="3" Margin="0,25,0,10"/>
+
+                <Label Content="Подтвердите новый пароль" Grid.Row="4"/>
+                <PasswordBox x:Name="ConfirmPasswordBox" Grid.Row="4" Margin="0,25,0,10"/>
+
+                <StackPanel Grid.Row="5" Orientation="Vertical" Margin="0,10,0,0">
+                    <Button Content="Сохранить" Click="SaveButton_Click"/>
+                    <Button Content="Назад" Click="ButtonBack_Click" Background="Transparent" Foreground="Gray"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>
