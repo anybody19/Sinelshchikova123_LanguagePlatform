@@ -44,7 +44,15 @@ namespace Sinelshchikova123_LanguagePlatform.Pages
                 };
 
                 db.User.Add(newUser);
-                db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("ОШИБКА БАЗЫ ДАННЫХ: " + ex.Message + "\n\n" + ex.InnerException?.Message);
+                    return; // прерываем регистрацию, если была ошибка
+                }
             }
 
             MessageBox.Show("Вы успешно зарегистрированы!");
