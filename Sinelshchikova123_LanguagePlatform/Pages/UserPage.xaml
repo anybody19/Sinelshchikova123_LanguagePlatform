@@ -48,7 +48,7 @@
                                     </Binding>
                                 </Image.Source>
                             </Image>
-
+                            
                             <TextBlock Grid.Row="2" Text="{Binding Role}" HorizontalAlignment="Center" Foreground="Gray" Margin="0,5,0,0"/>
                         </Grid>
                     </Border>
