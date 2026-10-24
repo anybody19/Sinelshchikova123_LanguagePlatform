@@ -10,6 +10,7 @@ namespace Sinelshchikova123_LanguagePlatform.Pages
         public RegPage()
         {
             InitializeComponent();
+            comboBxRole.SelectedIndex = 0;
         }
 
         private void regButton_Click(object sender, RoutedEventArgs e)
@@ -39,24 +40,23 @@ namespace Sinelshchikova123_LanguagePlatform.Pages
                 {
                     Login = txtbxLog.Text,
                     Password = AuthPage.GetHash(passBxFrst.Password),
-                    Role = "User",
+                    Role = (comboBxRole.SelectedItem as ComboBoxItem)?.Content.ToString(),
                     FIO = txtbxFIO.Text
                 };
 
                 db.User.Add(newUser);
+
                 try
                 {
                     db.SaveChanges();
+                    MessageBox.Show("Вы успешно зарегистрированы!");
+                    NavigationService?.GoBack();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("ОШИБКА БАЗЫ ДАННЫХ: " + ex.Message + "\n\n" + ex.InnerException?.Message);
-                    return; // прерываем регистрацию, если была ошибка
                 }
             }
-
-            MessageBox.Show("Вы успешно зарегистрированы!");
-            NavigationService?.GoBack();
         }
 
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
